@@ -1,317 +1,296 @@
-// Names: Alyxander Byfield, David Stralak
-// Student IDs: 100704163, 
-// Date Completed: February 6th, 2022
-
-//IIFE -- immediately invoked Function expression 
-
-// AKA anon self-excuteing function
+// IIFE -- Immediately Invoked Function Expression
+// AKA Anonymous Self-Executing Function
 (function()
 {
-    function DisplayHome()
+
+    function DisplayAboutPage()
     {
-        // step 1 get refrence to entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let DocumnentBody = document.body;
-        //step 2 create elements to insert
-        let MainParagragh = document.createElement("p");
-        
-        let Article = document.createElement("article");
-        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3"> Welcome to our Lab 1 website</a> </p>`;
-        //step 3 configure element
-        MainParagragh.setAttribute("id", "MainParagraph");
-        MainParagragh.setAttribute("class", "mt-3");
-        //example of template string(lab 1 help)
-        let ParagraphStringOne = "Welcome to Lab 1 of WEBD-6201, this lab is being done by  David Stralak and Alyxander Byfield";
-        let ParagraphStringTwo = `${ParagraphStringOne} I hope you enjoy what we have created and what the website will show you`;
-        MainParagragh.textContent = ParagraphStringTwo;
-        Article.setAttribute("class", "container");
-        //changing background image
-        DocumnentBody.style.backgroundImage = ( "url(./images/webdbackground.jpg)");
-        DocumnentBody.style.backgroundRepeat = ("no-repeat");
-        DocumnentBody.style.backgroundSize = ("cover");
-        DocumnentBody.style.color =("azure");
+        console.log("About Us Page");
+    }
 
-        //step 4 add element
-        MainContent.appendChild(MainParagragh);
-        Article.innerHTML = ArticleParagraph;
-        DocumnentBody.appendChild(Article);
-    }   
-
-    function DisplayProjects()
+    function DisplayProductsPage()
     {
+        console.log("Products Page");
+    }
 
-
-        // step 1 get refrence to entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let DocumnentBody = document.body;
-
-        //step 2 create elements to insert
-        let MainParagragh = document.createElement("p");
-        
-        let Article = document.createElement("article");
-        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3"> 
-        One of our Favourite projects were the linux labs,  when doing the labs they were extremely 
-        interesting to places that you could get to with knowing the right structure. 
-        Another Project that was really interesting was the 1st Mainframe assignment, it was really cool
-        to work in a older system and still see used today in different bussiness.
-        Lastly, a project I really enjoyed was the Java class creation project from OOP 2. 
-        It's fun to make classes in Java.</p>`;
-        //step 3 configure element
-        MainParagragh.setAttribute("id", "MainParagraph");
-        MainParagragh.setAttribute("class", "mt-3");
-        //example of template string(lab 1 help)
-        let ParagraphStringOne = "Welcome to Lab 1 of WEBD-6201, this lab is being done by  David Stralak and Alyxander Byfield";
-        let ParagraphStringTwo = `${ParagraphStringOne} This is my Projects page where we will be posting three of our favourite projects`;
-        MainParagragh.textContent = ParagraphStringTwo;
-        Article.setAttribute("class", "container");
-        //changing background image
-        DocumnentBody.style.backgroundImage = ( "url(./images/webdbackground.jpg)");
-        DocumnentBody.style.backgroundRepeat = ("no-repeat");
-        DocumnentBody.style.backgroundSize = ("cover");
-        DocumnentBody.style.color =("azure");
-
-        //step 4 add element
-        MainContent.appendChild(MainParagragh);
-        Article.innerHTML = ArticleParagraph;
-        DocumnentBody.appendChild(Article);
-;
-        
-
-        //Deletion example
-        //document.getElementsByTagName("li")[0].remove();
-        //document.getElementById("ArticleParagraph").remove();
-        
-        //insert before
-        // let NewH1 = document.createElement("h1");
-        // NewH1.setAttribute("class", "display-1");
-        
-        // MainContent.before(NewH1);
-        // NewH1.textContent = "Hello World :(";
-        // Testing git again 
-    }  
-    
-    function DisplayAbout()
+    function DisplayServicesPage()
     {
+        console.log("Services Page");
+    }
 
-        // step 1 get refrence to entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let DocumnentBody = document.body;
-        //step 2 create elements to insert
-        
-        let MainParagragh = document.createElement("p");
-        
-        let Article = document.createElement("article");
-        let ArticleParagraph = `
-        <p id="ArticleParagraph" class="mt-3"> David Stralak: I am in my 2nd year of the CPA course and i also play for the varsity rugby team here 
-        at durham. I hope to come back to durham after this program to continue my studies but having a focus on cyber security. My resume can be found here at 
-        <a href="https://my.indeed.com/p/davids-fel56a5">David's resume</a> 
-        </p>
-        <p class="mt-3"> Alyx Byfield: Hey my name is Alyx and I am a 2nd year computer programming student.
-        Some of my hobbies include: Reading, Writing, Music, Arduino, and Coding.
-        This year I'm striving to get started in the field of IT
-        Here is a link to my Indeed Resume: 
-        <a href="https://my.indeed.com/p/alyxanderb-chwsm6e"> Alyx's resume</a>
-        </p>`;
-        //step 3 configure element
-        MainParagragh.setAttribute("id", "MainParagraph");
-        MainParagragh.setAttribute("class", "mt-3");
-        //example of template string(lab 1 help)
-        let ParagraphStringOne = "Welcome to Lab 1 of WEBD-6201, this lab is being done by  David Stralak and Alyxander Byfield";
-        let ParagraphStringTwo = `${ParagraphStringOne} I hope you enjoy what we have created and what the website will show you`;
-        MainParagragh.textContent = ParagraphStringTwo;
-        Article.setAttribute("class", "container");
-        //changing background image
-        DocumnentBody.style.backgroundImage = ( "url(./images/webdbackground.jpg)");
-        DocumnentBody.style.backgroundRepeat = ("no-repeat");
-        DocumnentBody.style.backgroundSize = ("cover");
-        DocumnentBody.style.color =("azure");
 
-        //step 4 add element
-        MainContent.appendChild(MainParagragh);
-        Article.innerHTML = ArticleParagraph;
-        DocumnentBody.appendChild(Article);
-        
-    }   
-
-    function DisplayContact()
+    function DisplayHomePage()
     {
+        console.log("Home Page");
 
-
-        // step 1 get refrence to entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let DocumnentBody = document.body;
-        //step 2 create elements to insert
-        let MainParagragh = document.createElement("p");
-        
-        let Article = document.createElement("article");
-        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3"> Later updates will be made to improve the site, Stay Tuned </p>`;
-        //step 3 configure element
-        MainParagragh.setAttribute("id", "MainParagraph");
-        MainParagragh.setAttribute("class", "mt-3");
-        //example of template string(lab 1 help)
-        let ParagraphStringOne = "Welcome to Lab 1 of WEBD-6201, this is the contact page please input you information and we contact you shortly";
-        
-        MainParagragh.textContent = ParagraphStringOne;
-        Article.setAttribute("class", "container");
-
-        //changing background image
-        DocumnentBody.style.backgroundImage = ( "url(./images/webdbackground.jpg)");
-        DocumnentBody.style.backgroundRepeat = ("no-repeat");
-        DocumnentBody.style.backgroundSize = ("cover");
-        DocumnentBody.style.color =("azure");
-
-        //step 4 add element
-        MainContent.appendChild(MainParagragh);
-        Article.innerHTML = ArticleParagraph;
-        DocumnentBody.appendChild(Article);
-
-        let SendButton = document.getElementById("sendButton");
-        SendButton.addEventListener("click", function(event)
-            {
-                console.log("Clicked!");
-                let contact = new Contact(fullName.value, contactNumber.value, emailAddress.value);
-                console.log(contact.toString());
-                event.preventDefault();
-                window.setTimeout(function(){location.href = "index.html"}, 3000);   
-            }
-        )
-
-        
-        
-    }  
-
-    function DisplayServices()
-    {
-
-
-        // step 1 get refrence to entry point
-        let MainContent = document.getElementsByTagName("main")[0];
-        let DocumnentBody = document.body;
-        //created var that use class name to change products to projects
-        let ProjectsTab = document.getElementById("projects");
-
-        //step 2 create elements to insert
-        let MainParagragh = document.createElement("p");
-        
-        let Article = document.createElement("article");
-        let ArticleParagraph = `<p id="ArticleParagraph" class="mt-3"> David Stralak: My skills inculde the ability to learn things quckly as i get understanding of concepts quickly.
-         I also have a wide range of skill in all levels of programming from OOP to Web development to System development. My three Strongest skills are Document analysis,
-         Custom programming with most of my knowledge being in C++, Java, and C#, the thrid skill is Web Design. </p>`;
-        let ArticleParagraph2 = `<p id="ArticleParagraph" class="mt-3"> 
-         Alyxander Byfield: Our goal is to provide only the best services for our clients
-         and to that end, I will use my skills in web development, documentation, and planning to ensure our clients
-         get only the best. </p>`;
-
-
-        //step 3 configure element
-        MainParagragh.setAttribute("id", "MainParagraph");
-        MainParagragh.setAttribute("class", "mt-3");
-        //example of template string(lab 1 help)
-        let ParagraphStringOne = "Welcome to Lab 1 of WEBD-6201, this lab is being done by  David Stralak and Alyxander Byfield";
-        let ParagraphStringTwo = `${ParagraphStringOne} I hope you enjoy what we have created and what the website will show you`;
-        MainParagragh.textContent = ParagraphStringTwo;
-        Article.setAttribute("class", "container");
-        //changing text of products to projects
-        ProjectsTab.textContent = "Projects";
-        //changing background image
-        DocumnentBody.style.backgroundImage = ( "url(./images/webdbackground.jpg)");
-        DocumnentBody.style.backgroundRepeat = ("no-repeat");
-        DocumnentBody.style.backgroundSize = ("cover");
-        DocumnentBody.style.color =("azure");
-
-        //step 4 add element
-        MainContent.appendChild(MainParagragh);
-        Article.innerHTML += ArticleParagraph;
-        Article.innerHTML += ArticleParagraph2;
-        DocumnentBody.appendChild(Article);
-
-        
-    }   
-
-
-    //named function
-    function Start()
-    {
-        console.log("App Started!");
-
-
-        $(".pageImages").css(
-            {
-                "width": "30%",
-                "height": "60%",
-                "margin-left": "1%"
-            }
-        );
-
-        //created var that use class name to change products to projects
-        // let ProductsTab = document.getElementById("projects");
-        // ProductsTab.textContent = "Projects";
-
-        document.getElementById("projects").innerHTML = "Projects";
-
-        // Get a target on the Navbar list
-        let NavbarUl = document.getElementById("nav-ul");
-        // Get a targer on the Contact button for placement
-        let ContactBtn = document.getElementById("contact_btn");
-
-        // Create new list item
-        let HumanResourcesCon = document.createElement("li");
-        HumanResourcesCon.className = "nav-item";
-            // let HumanResourcesTab = document.createElement("a");
-            // Append a new Anchor element
-            let HumanResourcesTab = HumanResourcesCon.appendChild(document.createElement("a"));
-            HumanResourcesTab.classList.add("nav-link");
-            // Create I element for text + icon
-                let HumanResourcesText = document.createElement("i");
-                HumanResourcesText.classList.add("fas", "fa-user-circle");
-                HumanResourcesText.innerHTML = "Human Resources";
-                HumanResourcesTab.appendChild(HumanResourcesText);
-        // Insert the new HR link before the Contact Button
-        NavbarUl.insertBefore(HumanResourcesCon, ContactBtn);
-
-        // Creating the footer Navbar
-        //  BOOTSTRAP REFERENCE
-        // <nav class="navbar fixed-bottom navbar-light bg-light">
-        //     <div class="container-fluid">
-        //          <a class="navbar-brand" href="#">Fixed bottom</a>
-        //     </div>
-        // </nav>
-        let FooterNavbar = document.createElement("nav");
-        FooterNavbar.classList.add("navbar", "fixed-bottom", "navbar-light", "bg-dark");
-        let FooterNavbarDiv = FooterNavbar.appendChild(document.createElement("div"));
-            FooterNavbarDiv.className = "container-fluid";
-            let FooterNavBarText = document.createElement("a");
-            FooterNavbarDiv.appendChild(FooterNavBarText);
-        FooterNavBarText.className = "navbar-brand";
-        FooterNavBarText.innerHTML = "©Copyright 2022";
-        document.body.style.paddingBottom = "20%";
-        document.body.appendChild(FooterNavbar);
-
-
-
-        switch(document.title)
+        $("#AboutUsButton").on("click", function()
         {
-            case"Home":
-                DisplayHome();
-                break;
-                case"About Us":
-                DisplayAbout();
-                console.log("About us page");
-                break;
-                case"Products":
-                DisplayProjects();
-                break;
-                case"Services":
-                DisplayServices();
-                break;
-                case"Contact Us":
-                DisplayContact();
-                break;
+            location.href = "about.html";
+        });
+
+        $("main").append(`<p id="MainParagraph" class="mt-3">This is the Main Paragraph</p>`);
+        //Article.innerHTML = ArticleParagraph;
+        $("body").append(`<article class="container">
+        <p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>
+        </article>`);
+    }
+
+    /**
+     * Adds a Contact Object to localStorage
+     *
+     * @param {string} fullName
+     * @param {string} contactNumber
+     * @param {string} emailAddress
+     */
+    function AddContact(fullName, contactNumber, emailAddress)
+    {
+        let contact = new core.Contact(fullName, contactNumber, emailAddress);
+        if(contact.serialize())
+        {
+            let key = contact.FullName.substring(0, 1) + Date.now();
+
+            localStorage.setItem(key, contact.serialize());
         }
+    }
+
+
+    /**
+     *Method is template validatio,
+     *function
+     * @param {*string} InputID
+     * @param {*RegEx} Reg_Expression
+     * @param {*string} Error_message
+     */
+    function testInputField(InputID, Reg_Expression, Error_message )
+    {
+        let messageArea = $("#messageArea").hide();
+
+        $("#" + InputID).on("blur", function()
+        {
+            let inputTextField =  $(this).val(); //text inside full name
+            if(!Reg_Expression.test(inputTextField))
+            {
+                $(this).trigger("focus").trigger("select");
+  
+                messageArea.addClass("alert alert-danger").text(Error_message).show();
+
+            }else{//everything okay
+                messageArea.removeAttr("class").hide();
+            }
+        });
+
 
     }
 
-    window.addEventListener("load", Start);
+    function contactFromValidation(){
 
+        testInputField("fullName", /^([A-Z][a-z]{1,3}.?\s)?([A-Z][a-z]{1,25})+(\s|,|-)([A-Z][a-z]{1,25})+(\s|,|-)*$/, "Please Enter a valid First Name; Must inculde a Capitalized first name and Captialized last name.");
+        testInputField("contactNumber", /^(\+\d{1,3}[\s-.]?)?\(?\d{3}\)?[\s-.]?\d{3}[\s-.]?\d{4}$/, "Please Enter a valid Phone Number; Example: 905-555-9503");
+        testInputField("emailAddress", /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,10}$/, "Please Enter a valid Email Addres; Example: example@example.com");
+
+    }
+
+
+
+    function DisplayContactPage()
+    {
+        console.log("Contact Us Page");
+
+        contactFromValidation();
+
+        let sendButton = document.getElementById("sendButton");
+        let subscribeCheckbox = document.getElementById("subscribeCheckbox");
+
+        sendButton.addEventListener("click", function(event)
+        {
+            //event.preventDefault();
+
+            if(subscribeCheckbox.checked)
+            {
+                AddContact(fullName.value, contactNumber.value, emailAddress.value);
+            }
+        });
+    }
+
+  
+
+    function DisplayContactListPage()
+    {
+        console.log("Contact-List Page");
+
+        if(localStorage.length > 0) // check if localStorage has something in it 
+        {
+            let contactList = document.getElementById("contactList");
+
+            let data = "";
+
+            let keys = Object.keys(localStorage);
+
+            let index = 1;
+
+            //for every key in the keys collection loop
+            for(const key of keys)
+            {
+                let contactData = localStorage.getItem(key); // retrieve contact data from localStorage
+
+                let contact = new core.Contact(); // create an empty Contact Object
+                contact.deserialize(contactData);
+
+                data += `<tr>
+                <th scope="row" class="text-center">${index}</th>
+                <td>${contact.FullName}</td>
+                <td>${contact.ContactNumber}</td>
+                <td>${contact.EmailAddress}</td>
+                <td class="text-center"><button value="${key}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</button></td>
+                <td class="text-center"><button value="${key}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</button></td>
+                </tr>
+                `;
+
+                
+                
+                index++;
+            }
+
+            contactList.innerHTML = data;
+
+            $("#addButton").on("click", () =>
+            {
+                location.href = "edit.html#add";
+            });
+
+            $("button.delete").on("click", function()
+            {
+                if(confirm("Are you sure?"))
+                {
+                    localStorage.removeItem($(this).val());
+                }
+                
+                location.href = "contact-list.html";
+            });
+
+            $("button.edit").on("click", function() 
+            {
+                location.href = "edit.html#" + $(this).val();
+            });
+        }
+    }
+
+    function DisplayEditPage()
+    {
+        console.log("Edit Page");
+
+        contactFromValidation();
+
+        let page = location.hash.substring(1);
+
+        switch(page)
+        {
+            case "add":
+                {
+                    $("main>h1").text("Add Contact");
+
+                    $("#editButton").html(`<i class="fas fa-plus-circle fa-lg"></i> Add`);
+
+                    $("#editButton").on("click", (event) => 
+                    {
+                        event.preventDefault();
+                        // Add Contactt
+                        AddContact(fullName.value, contactNumber.value, emailAddress.value);
+                        // Refresh the contact-list page
+                        location.href ="contact-list.html";
+                    });
+
+                    $("#cancelButton").on("click", () =>
+                    {
+                        location.href ="contact-list.html";
+                    });
+
+                }
+                break;
+            default:
+                {
+                    // get the contact info from localStorage
+                    let contact = new core.Contact();
+                    contact.deserialize(localStorage.getItem(page));
+
+                    // display the contact info in the edit form
+                    $("#fullName").val(contact.FullName);
+                    $("#contactNumber").val(contact.ContactNumber);
+                    $("#emailAddress").val(contact.EmailAddress);
+
+                    // when Edit is pressed - update the contact
+                    $("#editButton").on("click", (event)=>
+                    {
+                        event.preventDefault();
+
+                        // get any changes from the form
+                        contact.FullName = $("#fullName").val();
+                        contact.ContactNumber = $("#contactNumber").val();
+                        contact.EmailAddress = $("#emailAddress").val();
+
+                        // replace the item in localStorage
+                        localStorage.setItem(page, contact.serialize());
+
+                        // return to the contact-list
+                        location.href ="contact-list.html";
+                    });
+
+                    $("#cancelButton").on("click", () =>
+                    {
+                        location.href ="contact-list.html";
+                    });
+                    
+                }
+                break;
+        }
+    }
+
+   function DisplayLoginPage(){
+        console.log("Login Page");
+    }
+
+    function DisplayRegisterPage(){
+        console.log("Register Page");
+    }
+
+    // named function
+    function Start()
+    {
+        console.log("App Started!!");
+
+        switch (document.title) 
+        {
+          case "Home":
+            DisplayHomePage();
+            break;
+          case "Contact Us":
+            DisplayContactPage();
+            break;
+          case "Contact-List":
+            DisplayContactListPage();
+            break;
+          case "About Us":
+            DisplayAboutPage();
+            break;
+          case "Our Products":
+            DisplayProductsPage();
+            break;
+          case "Our Services":
+            DisplayServicesPage();
+            break;
+          case "Edit":
+            DisplayEditPage();
+            break;
+          case "Login":
+            DisplayLoginPage();
+            break;
+          case "Register":
+            DisplayRegisterPage();
+            break;
+
+        }
+    }
+
+    window.addEventListener("load", Start);
 
 })();
