@@ -1,0 +1,23 @@
+{
+    "users":
+    [
+        {
+            "DisplayName": "John Smith",
+            "EmailAddress": "JSmith@example.com",
+            "Username": "jsmith",
+            "Password": "123456"
+        },
+        {
+            "DisplayName": "Mary Smith",
+            "EmailAddress": "MSmith@example.com",
+            "Username": "Msmith",
+            "Password": "123456"
+        },
+        {
+            "DisplayName": "Admin",
+            "EmailAddress": "Admin@example.com",
+            "Username": "admin",
+            "Password": "123456"
+        }
+    ]
+}

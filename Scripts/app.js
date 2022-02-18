@@ -17,6 +17,41 @@
     {
         console.log("Services Page");
     }
+    /**
+     *uses ajax to open a connection an return data to the call back function
+     *
+     * @param {string} method
+     * @param {string} url
+     * @param {function} callback
+     */
+    function AjaxRequest(method, url, callback)
+    {
+        //hxr element
+        let XHR = new XMLHttpRequest();
+        //event listener for ready state change event
+        XHR.addEventListener("readystatechange", () =>{
+            if(XHR.readyState === 4 && XHR.status === 200){
+                callback(XHR.responseText);
+            }
+        });
+
+        //open connection
+        XHR.open(method, url);
+
+        //send request to server
+        XHR.send();
+
+    }
+    /**
+     * load the navbar from header file and injects it into pages
+     * @param {string} data 
+     */
+    function LoadHeader(data)
+    {
+        $("header").html(data);
+        $(`li>a:contains('${document.title}')`).addClass("active");
+        CheckLogin();
+    }
 
 
     function DisplayHomePage()
@@ -33,6 +68,10 @@
         $("body").append(`<article class="container">
         <p id="ArticleParagraph" class="mt-3">This is the Article Paragraph</p>
         </article>`);
+
+
+
+
     }
 
     /**
@@ -116,6 +155,7 @@
 
     function DisplayContactListPage()
     {
+
         console.log("Contact-List Page");
 
         if(localStorage.length > 0) // check if localStorage has something in it 
@@ -246,8 +286,83 @@
     }
 
    function DisplayLoginPage(){
+
         console.log("Login Page");
+
+        let messageArea = $("#messageArea");
+        messageArea.hide();
+
+        $("#loginButton").on("click", function()
+        {
+            let success = false;
+
+            let newUser = new core.User();
+
+            //jquery shortcut to load user.jsonfile
+            $.get("./Data/users.json", function(data)
+            {
+                //for every user in user.json file loop
+                for (const user of data.users) 
+                {
+                    //check if user password match in data
+                    if(username.value == user.Username && password.value == user.Password)
+                    {
+                        //get data and assign to empty user object
+                        newUser.fromJSON(user);
+                        success = true;
+                        break;
+                    }
+                }
+
+                //user is found do this
+            if(success == true)
+            {
+                // add user to session storage
+                sessionStorage.setItem("user", newUser.serialize());
+
+                //hide errors
+                messageArea.removeAttr("class").hide();
+
+                //move user to secure are of site
+                location.href ="contact-list.html";
+            }
+            else
+            {
+                $("#username").trigger("focus").trigger("select");
+                messageArea.addClass("alert alert-danger").text("Error: Invalid Login Information").show();
+            }
+
+            $("#cancelButton").on("click",  function()
+            {
+                document.forms[0].reset();
+                location.href = "index.href";
+            });
+
+            });
+            
+        });
     }
+
+    function CheckLogin()
+        {
+            // if user is logged in
+            if(sessionStorage.getItem("user"))
+            {
+                // swap out the login link for the logout link
+                $("#login").html(
+                    `<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
+                );
+    
+                $("#logout").on("click", function()
+                {
+                    // perform logout
+                    sessionStorage.clear();
+    
+                    // redirect back to login
+                    location.href = "login.html";
+                });
+            }
+        }
 
     function DisplayRegisterPage(){
         console.log("Register Page");
@@ -257,6 +372,10 @@
     function Start()
     {
         console.log("App Started!!");
+
+        AjaxRequest("GET", "header.html", LoadHeader);
+
+
 
         switch (document.title) 
         {
@@ -289,6 +408,8 @@
             break;
 
         }
+
+
     }
 
     window.addEventListener("load", Start);
