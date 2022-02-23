@@ -195,7 +195,7 @@
 
             $("#addButton").on("click", () =>
             {
-                location.href = "Edit.html#add";
+                location.href = "edit.html#add";
             });
 
             $("button.delete").on("click", function()
