@@ -1,29 +1,32 @@
 (function(core){
 
-    class User 
+    class User
     {
-        //constructor
-        constructor(displayName = "", emailAddress = "", username = "", password = "")
+        // constructor
+        constructor(displayName = "", emailAddress= "", username = "", password = "")
         {
             this.DisplayName = displayName;
             this.EmailAddress = emailAddress;
             this.Username = username;
             this.Password = password;
         }
-        //overrident functions
+
+        // overriden functions
         toString()
         {
-            return `Display Name: ${this.DisplayName}\nEmail Address: ${this.EmailAddress}\nUser Name: ${this.Username}`;
+            return `Display Name  : ${this.DisplayName}\nEmail Address : ${this.EmailAddress}\nUsername : ${this.Username}`;
         }
-        //utility functions
+
+        // utility functions
         toJSON()
         {
-            return{
+            return {
                 "DisplayName": this.DisplayName,
                 "EmailAddress": this.EmailAddress,
                 "Username": this.Username
             }
         }
+
         fromJSON(data)
         {
             this.DisplayName = data.DisplayName;
@@ -32,14 +35,18 @@
             this.Password = data.Password;
         }
 
-        serialize() {
-            if (this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "") {
+        serialize() 
+        {
+            if (this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "") 
+            {
                 return `${this.DisplayName},${this.EmailAddress},${this.Username}`;
             }
             console.error("One or more properties of the User Object are missing or empty");
             return null;
         }
-        deserialize(data) {
+
+        deserialize(data) 
+        {
             let propertyArray = data.split(",");
             this.DisplayName = propertyArray[0];
             this.EmailAddress = propertyArray[1];
