@@ -429,11 +429,11 @@
             // use jQuery shortcut to load the users.json file
             $.get("./Data/users.json", function(data)
             { 
-                // for everry user in the users.json file, loop
+                // for every user in the users.json file, loop
                 for (const user of data.users) 
                 {
                     let username = document.forms[0].username.value as string;
-                    let password = document.forms[1].contpasswordactNumber.value as string;
+                    let password = document.forms[0].password.value as string;
 
                     // check if the username and password entered match with user
                     if(username == user.Username && password == user.Password)
@@ -467,7 +467,7 @@
 
            
 
-            $("#cancelButton").on("click", function()
+            $("#cancelButtton").on("click", function()
             {
                 // clear the login form
                 document.forms[0].reset();

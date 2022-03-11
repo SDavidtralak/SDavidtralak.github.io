@@ -236,7 +236,7 @@
             $.get("./Data/users.json", function (data) {
                 for (const user of data.users) {
                     let username = document.forms[0].username.value;
-                    let password = document.forms[1].contpasswordactNumber.value;
+                    let password = document.forms[0].password.value;
                     if (username == user.Username && password == user.Password) {
                         newUser.fromJSON(user);
                         success = true;
@@ -253,7 +253,7 @@
                     messageArea.addClass("alert alert-danger").text("Error: Invalid Login Information.").show();
                 }
             });
-            $("#cancelButton").on("click", function () {
+            $("#cancelButtton").on("click", function () {
                 document.forms[0].reset();
                 LoadLink("home");
             });
