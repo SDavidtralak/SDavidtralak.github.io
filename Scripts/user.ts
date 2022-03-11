@@ -1,71 +1,90 @@
-"use strict";
-var core;
-(function (core) {
-    class User {
-        m_displayName;
-        get DisplayName() {
+namespace core{
+
+    export class User
+    {
+        private m_displayName: string;
+        public get DisplayName(): string {
             return this.m_displayName;
         }
-        set DisplayName(value) {
+        public set DisplayName(value: string) {
             this.m_displayName = value;
         }
-        m_emailAddress;
-        get EmailAddress() {
+        private m_emailAddress: string;
+        public get EmailAddress(): string {
             return this.m_emailAddress;
         }
-        set EmailAddress(value) {
+        public set EmailAddress(value: string) {
             this.m_emailAddress = value;
         }
-        m_username;
-        get Username() {
+        private m_username: string;
+        public get Username(): string {
             return this.m_username;
         }
-        set Username(value) {
+        public set Username(value: string) {
             this.m_username = value;
         }
-        m_password;
-        get Password() {
+        private m_password: string;
+        public get Password(): string {
             return this.m_password;
         }
-        set Password(value) {
+        public set Password(value: string) {
             this.m_password = value;
         }
-        constructor(displayName = "", emailAddress = "", username = "", password = "") {
+
+
+        // constructor
+        constructor(displayName = "", emailAddress= "", username = "", password = "")
+        {
             this.m_displayName = displayName;
             this.m_emailAddress = emailAddress;
             this.m_username = username;
             this.m_password = password;
         }
-        toString() {
+
+        // overriden functions
+        toString():string
+        {
             return `Display Name  : ${this.DisplayName}\nEmail Address : ${this.EmailAddress}\nUsername : ${this.Username}`;
         }
-        toJSON() {
+
+        // utility functions
+        //todo change return type
+        toJSON()
+        {
             return {
                 "DisplayName": this.DisplayName,
                 "EmailAddress": this.EmailAddress,
                 "Username": this.Username
-            };
+            }
         }
-        fromJSON(data) {
+        //todo: replace :any later
+        fromJSON(data:any)
+        {
             this.DisplayName = data.DisplayName;
             this.EmailAddress = data.EmailAddress;
             this.Username = data.Username;
             this.Password = data.Password;
         }
-        serialize() {
-            if (this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "") {
+
+        serialize():string|null 
+        {
+            if (this.DisplayName !== "" && this.EmailAddress !== "" && this.Username !== "") 
+            {
                 return `${this.DisplayName},${this.EmailAddress},${this.Username}`;
             }
             console.error("One or more properties of the User Object are missing or empty");
             return null;
         }
-        deserialize(data) {
+
+        deserialize(data:string):void 
+        {
             let propertyArray = data.split(",");
             this.DisplayName = propertyArray[0];
             this.EmailAddress = propertyArray[1];
             this.Username = propertyArray[2];
         }
     }
-    core.User = User;
-})(core || (core = {}));
-//# sourceMappingURL=user.js.map
+
+
+
+}
